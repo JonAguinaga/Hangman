@@ -2,8 +2,10 @@ import requests
 
 word_site= "http://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain"
 
-respuesta = requests.get(word_site)
+response = requests.get(word_site)
 WORDS = response.content.splitlines()
+
+respuesta = WORDS[random.randint(0, len(WORDS))]
 
 contador = 5
 
@@ -11,7 +13,7 @@ letra = "o"
 
 inprogress = list("___")
 
-while inprogress != respuesta and contador != 0:
+while inprogress != response and contador != 0:
     print("Hola, introduce tu letra")
 
     respuesta = list("Hoz")
